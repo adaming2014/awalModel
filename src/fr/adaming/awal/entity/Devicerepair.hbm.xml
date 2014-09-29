@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 sept. 2014 16:10:21 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="fr.adaming.awal.entity.Devicerepair" table="devicerepair" catalog="awal_db">
+        <id name="idDeviceRepair" type="java.lang.Integer">
+            <column name="id_deviceRepair" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="repairer" class="fr.adaming.awal.entity.Repairer" fetch="select">
+            <column name="id_repairer" />
+        </many-to-one>
+        <many-to-one name="modelpackage" class="fr.adaming.awal.entity.Modelpackage" fetch="select">
+            <column name="id_modelpackage" />
+        </many-to-one>
+        <many-to-one name="device" class="fr.adaming.awal.entity.Device" fetch="select">
+            <column name="id_device" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="description" length="45" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="9" />
+        </property>
+        <property name="dateCreation" type="date">
+            <column name="date_creation" length="10" />
+        </property>
+        <property name="dateInRepair" type="date">
+            <column name="date_in_repair" length="10" />
+        </property>
+        <property name="dateRepair" type="date">
+            <column name="date_repair" length="10" />
+        </property>
+        <property name="dateClosed" type="date">
+            <column name="date_closed" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

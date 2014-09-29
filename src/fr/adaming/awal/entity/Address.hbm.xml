@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 sept. 2014 16:10:21 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="fr.adaming.awal.entity.Address" table="address" catalog="awal_db">
+        <id name="idAddress" type="java.lang.Integer">
+            <column name="id_address" />
+            <generator class="identity" />
+        </id>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="45" />
+        </property>
+        <property name="postcode" type="string">
+            <column name="postcode" length="45" />
+        </property>
+        <set name="clients" table="client" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_address" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Client" />
+        </set>
+        <set name="firms" table="firm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_address" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Firm" />
+        </set>
+        <set name="repairers" table="repairer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_address" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Repairer" />
+        </set>
+    </class>
+</hibernate-mapping>

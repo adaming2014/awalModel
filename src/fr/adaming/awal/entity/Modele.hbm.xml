@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 sept. 2014 16:10:21 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="fr.adaming.awal.entity.Modele" table="modele" catalog="awal_db">
+        <id name="idModele" type="java.lang.Integer">
+            <column name="id_modele" />
+            <generator class="identity" />
+        </id>
+        <property name="weigth" type="double">
+            <column name="weigth" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="dimension" type="string">
+            <column name="dimension" length="45" not-null="true" />
+        </property>
+        <property name="brand" type="string">
+            <column name="brand" length="45" not-null="true" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="45" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+        <set name="devices" table="device" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_modele" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Device" />
+        </set>
+        <set name="modelpackages" table="modelpackage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_modele" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Modelpackage" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 sept. 2014 16:10:21 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="fr.adaming.awal.entity.Modelpackage" table="modelpackage" catalog="awal_db">
+        <id name="idModelpackage" type="java.lang.Integer">
+            <column name="id_modelpackage" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="modele" class="fr.adaming.awal.entity.Modele" fetch="select">
+            <column name="id_modele" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="45" />
+        </property>
+        <property name="price" type="string">
+            <column name="price" length="45" />
+        </property>
+        <set name="devicerepairs" table="devicerepair" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_modelpackage" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Devicerepair" />
+        </set>
+    </class>
+</hibernate-mapping>

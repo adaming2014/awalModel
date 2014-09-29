@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 sept. 2014 16:10:21 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="fr.adaming.awal.entity.User" table="user" catalog="awal_db">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="id_user" />
+            <generator class="identity" />
+        </id>
+        <property name="firstname" type="string">
+            <column name="firstname" length="45" not-null="true" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="45" not-null="true" />
+        </property>
+        <property name="mail" type="string">
+            <column name="mail" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="45" />
+        </property>
+        <set name="resellers" table="reseller" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_user" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Reseller" />
+        </set>
+        <set name="clients" table="client" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_user" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Client" />
+        </set>
+    </class>
+</hibernate-mapping>
