@@ -1,0 +1,8 @@
+/build/
+/dist/
+/web/WEB-INF/glassfish-web.xml
+/build.xml
+/lib/
+/nbproject/
+/src/conf/
+/manifest.mf
