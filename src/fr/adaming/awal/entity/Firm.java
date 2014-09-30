@@ -21,7 +21,13 @@ public class Firm  implements java.io.Serializable {
 
     public Firm() {
     }
-
+    public Firm( Address address, String name, String phone, String logoPath, String cssPath) {
+        this.address = address;
+        this.name = name;
+        this.phone = phone;
+        this.logoPath = logoPath;
+        this.cssPath = cssPath;
+    }
     public Firm(Integer idFirm, Address address, String name, String phone, String logoPath, String cssPath) {
         this.idFirm = idFirm;
         this.address = address;

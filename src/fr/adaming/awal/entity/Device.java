@@ -20,7 +20,13 @@ public class Device  implements java.io.Serializable {
 
     public Device() {
     }
-
+    
+    public Device(Modele modele, Client client, String description) {
+        this.modele = modele;
+        this.client = client;
+        this.description = description;
+    }
+    
     public Device(Integer idDevice, Modele modele, Client client, String description) {
         this.idDevice = idDevice;
         this.modele = modele;
