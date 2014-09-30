@@ -24,7 +24,6 @@ public class Repairer implements java.io.Serializable {
     }
 
     public Repairer(Address address, String enterprise, String competence, String available) {
-        this.idRepairer = idRepairer;
         this.address = address;
         this.enterprise = enterprise;
         this.competence = competence;
