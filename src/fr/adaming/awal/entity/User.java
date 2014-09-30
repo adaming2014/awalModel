@@ -97,9 +97,6 @@ public class User  implements java.io.Serializable {
         this.clients = clients;
     }
 
-
-
-
 }
 
 
