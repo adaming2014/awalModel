@@ -22,6 +22,13 @@ public class Address  implements java.io.Serializable {
     public Address() {
     }
 
+    public Address(Integer idAddress, String city, String street, String postcode) {
+        this.idAddress = idAddress;
+        this.city = city;
+        this.street = street;
+        this.postcode = postcode;
+    }
+
     public Address(String city, String street, String postcode, Set clients, Set firms, Set repairers) {
        this.city = city;
        this.street = street;

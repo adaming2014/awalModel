@@ -20,6 +20,13 @@ public class Client  implements java.io.Serializable {
     public Client() {
     }
 
+    public Client(Integer idClient, User user, Address address, String numbercard) {
+        this.idClient = idClient;
+        this.user = user;
+        this.address = address;
+        this.numbercard = numbercard;
+    }
+
     public Client(User user, Address address, String numbercard, Set devices) {
        this.user = user;
        this.address = address;
