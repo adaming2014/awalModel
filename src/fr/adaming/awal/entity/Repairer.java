@@ -34,47 +34,59 @@ public class Repairer implements java.io.Serializable {
         return this.idRepairer;
     }
 
-    public void setIdRepairer(Integer idRepairer) {
+    public Repairer setIdRepairer(Integer idRepairer) {
         this.idRepairer = idRepairer;
+
+        return this;
     }
 
     public Address getAddress() {
         return this.address;
     }
 
-    public void setAddress(Address address) {
+    public Repairer setAddress(Address address) {
         this.address = address;
+
+        return this;
     }
 
     public String getEnterprise() {
         return this.enterprise;
     }
 
-    public void setEnterprise(String enterprise) {
+    public Repairer setEnterprise(String enterprise) {
         this.enterprise = enterprise;
+
+        return this;
     }
 
     public String getCompetence() {
         return this.competence;
     }
 
-    public void setCompetence(String competence) {
+    public Repairer setCompetence(String competence) {
         this.competence = competence;
+
+        return this;
     }
 
     public String getAvailable() {
         return this.available;
     }
 
-    public void setAvailable(String available) {
+    public Repairer setAvailable(String available) {
         this.available = available;
+
+        return this;
     }
 
     public Set getDevicerepairs() {
         return this.devicerepairs;
     }
 
-    public void setDevicerepairs(Set devicerepairs) {
+    public Repairer setDevicerepairs(Set devicerepairs) {
         this.devicerepairs = devicerepairs;
+
+        return this;
     }
 }
