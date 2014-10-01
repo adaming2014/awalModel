@@ -22,7 +22,6 @@ public class Deviceinsurance implements java.io.Serializable {
     }
 
     public Deviceinsurance(Device device, Date beginDate, Date endDate, String description) {
-        this.idDeviceInsurance = idDeviceInsurance;
         this.device = device;
         this.beginDate = beginDate;
         this.endDate = endDate;
