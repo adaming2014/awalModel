@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2014 10:20:59 by Hibernate Tools 4.3.1 -->
+<!-- Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Devicerepair" table="devicerepair" catalog="awal_db" optimistic-lock="version">
+    <class name="fr.adaming.awal.entity.Devicerepair" table="devicerepair" catalog="awal_db">
         <id name="idDeviceRepair" type="java.lang.Integer">
             <column name="id_deviceRepair" />
-            <generator class="identity" />
+            <generator class="identity"></generator>
         </id>
         <many-to-one name="device" class="fr.adaming.awal.entity.Device" fetch="select">
             <column name="id_device" />

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2014 10:20:59 by Hibernate Tools 4.3.1 -->
+<!-- Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Address" table="address" catalog="awal_db" optimistic-lock="version">
+    <class name="fr.adaming.awal.entity.Address" table="address" catalog="awal_db">
         <id name="idAddress" type="java.lang.Integer">
             <column name="id_address" />
-            <generator class="identity" />
+            <generator class="identity"></generator>
         </id>
         <property name="city" type="string">
             <column name="city" length="45" />

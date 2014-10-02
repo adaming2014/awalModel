@@ -3,13 +3,13 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Modelpackage" table="modelpackage" catalog="awal_db">
-        <id name="idModelpackage" type="java.lang.Integer">
-            <column name="id_modelpackage" />
-            <generator class="identity"></generator>
+    <class name="fr.adaming.awal.entity.Deviceinsurancemodel" table="deviceinsurancemodel" catalog="awal_db" optimistic-lock="version">
+        <id name="idDeviceinsurancemodel" type="java.lang.Integer">
+            <column name="id_deviceinsurancemodel" />
+            <generator class="identity" />
         </id>
         <many-to-one name="modele" class="fr.adaming.awal.entity.Modele" fetch="select">
-            <column name="id_modele" />
+            <column name="id_modele" not-null="true" />
         </many-to-one>
         <property name="name" type="string">
             <column name="name" length="45" />
@@ -17,14 +17,8 @@
         <property name="description" type="string">
             <column name="description" length="45" />
         </property>
-        <property name="price" type="string">
-            <column name="price" length="45" />
+        <property name="duration" type="java.lang.Integer">
+            <column name="duration" />
         </property>
-        <set name="devicerepairs" table="devicerepair" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="id_modelpackage" />
-            </key>
-            <one-to-many class="fr.adaming.awal.entity.Devicerepair" />
-        </set>
     </class>
 </hibernate-mapping>
