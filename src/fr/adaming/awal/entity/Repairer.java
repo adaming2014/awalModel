@@ -11,6 +11,9 @@ import java.util.Set;
  */
 public class Repairer implements IUser, Serializable {
 
+    public static final String AVAILABLE = "AVAILABLE";
+    public static final String NOT_AVAILABLE = "NOT_AVAILABLE";
+
     private Integer idRepairer;
     private Address address;
     private User user;
