@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 29 sept. 2014 16:10:21 by Hibernate Tools 3.6.0 -->
+<!-- Generated 2 oct. 2014 10:20:59 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Firm" table="firm" catalog="awal_db">
+    <class name="fr.adaming.awal.entity.Firm" table="firm" catalog="awal_db" optimistic-lock="version">
         <id name="idFirm" type="java.lang.Integer">
             <column name="id_firm" />
             <generator class="identity" />

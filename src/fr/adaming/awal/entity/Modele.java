@@ -1,5 +1,5 @@
 package fr.adaming.awal.entity;
-// Generated 29 sept. 2014 16:10:20 by Hibernate Tools 3.6.0
+// Generated 2 oct. 2014 10:20:58 by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -102,4 +102,5 @@ public class Modele implements java.io.Serializable {
     public void setModelpackages(Set modelpackages) {
         this.modelpackages = modelpackages;
     }
+
 }
