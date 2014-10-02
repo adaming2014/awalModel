@@ -21,18 +21,6 @@
     <mapping resource="fr/adaming/awal/entity/Modelpackage.hbm.xml"/>
     <mapping resource="fr/adaming/awal/entity/Admin.hbm.xml"/>
     <mapping resource="fr/adaming/awal/entity/Device.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/User.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Deviceinsurance.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Devicerepair.hbm.xml"/>
     <mapping resource="fr/adaming/awal/entity/Deviceinsurancemodel.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Device.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Admin.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Modelpackage.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Reseller.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Firm.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Modele.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Address.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Repairer.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity2/Client.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
