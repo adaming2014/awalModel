@@ -1,5 +1,5 @@
 package fr.adaming.awal.entity;
-// Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1
+// Generated 2 oct. 2014 14:45:54 by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,17 +15,23 @@ public class Firm implements java.io.Serializable {
     private String phone;
     private String logoPath;
     private String cssPath;
+    private Set repairers = new HashSet(0);
     private Set resellers = new HashSet(0);
 
     public Firm() {
     }
 
-    public Firm(Address address, String name, String phone, String logoPath, String cssPath, Set resellers) {
+    public Firm(String name) {
+        this.name = name;
+    }
+
+    public Firm(Address address, String name, String phone, String logoPath, String cssPath, Set repairers, Set resellers) {
         this.address = address;
         this.name = name;
         this.phone = phone;
         this.logoPath = logoPath;
         this.cssPath = cssPath;
+        this.repairers = repairers;
         this.resellers = resellers;
     }
 
@@ -75,6 +81,14 @@ public class Firm implements java.io.Serializable {
 
     public void setCssPath(String cssPath) {
         this.cssPath = cssPath;
+    }
+
+    public Set getRepairers() {
+        return this.repairers;
+    }
+
+    public void setRepairers(Set repairers) {
+        this.repairers = repairers;
     }
 
     public Set getResellers() {

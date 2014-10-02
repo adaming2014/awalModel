@@ -1,33 +1,38 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 oct. 2014 14:45:55 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Firm" table="firm" catalog="awal_db">
+    <class catalog="awal_db" name="fr.adaming.awal.entity.Firm" optimistic-lock="version" table="firm">
         <id name="idFirm" type="java.lang.Integer">
-            <column name="id_firm" />
-            <generator class="identity"></generator>
+            <column name="id_firm"/>
+            <generator class="identity"/>
         </id>
-        <many-to-one name="address" class="fr.adaming.awal.entity.Address" fetch="select">
-            <column name="id_address" />
+        <many-to-one class="fr.adaming.awal.entity.Address" fetch="select" name="address">
+            <column name="id_address"/>
         </many-to-one>
         <property name="name" type="string">
-            <column name="name" length="45" />
+            <column length="45" name="name" not-null="true"/>
         </property>
         <property name="phone" type="string">
-            <column name="phone" length="45" />
+            <column length="45" name="phone"/>
         </property>
         <property name="logoPath" type="string">
-            <column name="logo_path" length="45" />
+            <column length="45" name="logo_path"/>
         </property>
         <property name="cssPath" type="string">
-            <column name="css_path" length="45" />
+            <column length="45" name="css_path"/>
         </property>
-        <set name="resellers" table="reseller" inverse="true" lazy="true" fetch="select">
+        <set fetch="select" inverse="true" lazy="true" name="repairers" table="repairer">
             <key>
-                <column name="id_firm" />
+                <column name="id_firm"/>
             </key>
-            <one-to-many class="fr.adaming.awal.entity.Reseller" />
+            <one-to-many class="fr.adaming.awal.entity.Repairer"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="resellers" table="reseller">
+            <key>
+                <column name="id_firm"/>
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Reseller"/>
         </set>
     </class>
 </hibernate-mapping>

@@ -1,33 +1,20 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 oct. 2014 15:08:30 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Repairer" table="repairer" catalog="awal_db">
+    <class catalog="awal_db" name="fr.adaming.awal.entity.Repairer" optimistic-lock="version" table="repairer">
         <id name="idRepairer" type="java.lang.Integer">
-            <column name="id_repairer" />
-            <generator class="identity"></generator>
+            <column name="id_repairer"/>
+            <generator class="identity"/>
         </id>
-        <many-to-one name="address" class="fr.adaming.awal.entity.Address" fetch="select">
-            <column name="id_address" />
+        <many-to-one class="fr.adaming.awal.entity.Firm" fetch="select" name="firm">
+            <column name="id_firm"/>
         </many-to-one>
-        <many-to-one name="user" class="fr.adaming.awal.entity.User" cascade="all" fetch="select">
-            <column name="id_user" not-null="true" />
+        <many-to-one class="fr.adaming.awal.entity.User" fetch="select" name="user">
+            <column name="id_user" not-null="true" unique="true"/>
         </many-to-one>
-        <property name="enterprise" type="string">
-            <column name="enterprise" length="45" />
-        </property>
-        <property name="competence" type="string">
-            <column name="competence" length="14" />
-        </property>
         <property name="available" type="string">
-            <column name="available" length="13" />
+            <column length="13" name="available" not-null="true"/>
         </property>
-        <set name="devicerepairs" table="devicerepair" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="id_repairer" />
-            </key>
-            <one-to-many class="fr.adaming.awal.entity.Devicerepair" />
-        </set>
     </class>
 </hibernate-mapping>
