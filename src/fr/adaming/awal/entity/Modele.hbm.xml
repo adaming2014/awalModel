@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2014 10:20:59 by Hibernate Tools 4.3.1 -->
+<!-- Generated 2 oct. 2014 12:02:02 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="fr.adaming.awal.entity.Modele" table="modele" catalog="awal_db" optimistic-lock="version">
         <id name="idModele" type="java.lang.Integer">
@@ -29,6 +29,7 @@
             </key>
             <one-to-many class="fr.adaming.awal.entity.Device" />
         </set>
+        <one-to-one name="deviceinsurancemodel" class="fr.adaming.awal.entity.Deviceinsurancemodel"></one-to-one>
         <set name="modelpackages" table="modelpackage" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="id_modele" />
