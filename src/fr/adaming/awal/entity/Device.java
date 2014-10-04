@@ -3,6 +3,7 @@ package fr.adaming.awal.entity;
 
 import fr.adaming.awal.entity.interfaces.IEntity;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -79,6 +80,27 @@ public class Device implements IEntity<Integer> {
 
     public void setDevicerepairs(Set devicerepairs) {
         this.devicerepairs = devicerepairs;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Device other = (Device) obj;
+        if (!Objects.equals(this.idDevice, other.idDevice)) {
+            return false;
+        }
+        return true;
     }
 
 }
