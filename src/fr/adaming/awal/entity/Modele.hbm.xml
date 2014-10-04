@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Modele" table="modele" catalog="awal_db">
+    <class name="fr.adaming.awal.entity.Modele" table="modele" catalog="awal_db" lazy="false">
         <id name="idModele" type="java.lang.Integer">
             <column name="id_modele" />
             <generator class="identity"></generator>

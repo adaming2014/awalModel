@@ -2,6 +2,7 @@ package fr.adaming.awal.entity;
 // Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -101,6 +102,27 @@ public class Modele implements java.io.Serializable {
 
     public void setModelpackages(Set modelpackages) {
         this.modelpackages = modelpackages;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Modele other = (Modele) obj;
+        if (!Objects.equals(this.idModele, other.idModele)) {
+            return false;
+        }
+        return true;
     }
 
 }
