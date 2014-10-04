@@ -7,10 +7,10 @@
             <column name="id_repairer"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="fr.adaming.awal.entity.Firm" fetch="select" name="firm">
+        <many-to-one class="fr.adaming.awal.entity.Firm" fetch="select" name="firm" lazy="false">
             <column name="id_firm"/>
         </many-to-one>
-        <many-to-one class="fr.adaming.awal.entity.User" fetch="select" name="user">
+        <many-to-one class="fr.adaming.awal.entity.User" fetch="select" name="user" lazy="false">
             <column name="id_user" not-null="true" unique="true"/>
         </many-to-one>
         <property name="available" type="string">
