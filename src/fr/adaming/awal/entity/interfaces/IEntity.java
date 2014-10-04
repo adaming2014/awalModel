@@ -5,10 +5,13 @@
  */
 package fr.adaming.awal.entity.interfaces;
 
+import java.io.Serializable;
+
 /**
  *
  * @author INTI0221
+ * @param <T>   Id type
  */
-public interface IUser<T> extends IEntity<T> {
-
+public interface IEntity<T> extends Serializable {
+    T getId();
 }
