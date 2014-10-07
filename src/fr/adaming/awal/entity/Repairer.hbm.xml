@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 2 oct. 2014 16:03:17 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class catalog="awal_db" name="fr.adaming.awal.entity.Repairer" optimistic-lock="version" table="repairer">
+    <class catalog="awal_db" name="fr.adaming.awal.entity.Repairer" optimistic-lock="version" table="repairer" lazy="false">
         <id name="idRepairer" type="java.lang.Integer">
             <column name="id_repairer"/>
             <generator class="identity"/>
