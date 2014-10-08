@@ -1,5 +1,5 @@
 package fr.adaming.awal.entity;
-// Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1
+// Generated 8 oct. 2014 14:22:13 by Hibernate Tools 4.3.1
 
 import fr.adaming.awal.entity.interfaces.IUser;
 
@@ -18,11 +18,6 @@ public class Admin implements IUser<Integer> {
         this.user = user;
     }
 
-    @Override
-    public Integer getId() {
-        return this.idAdmin;
-    }
-
     public Integer getIdAdmin() {
         return this.idAdmin;
     }
@@ -38,4 +33,10 @@ public class Admin implements IUser<Integer> {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @Override
+    public Integer getId() {
+        return idAdmin;
+    }
+
 }

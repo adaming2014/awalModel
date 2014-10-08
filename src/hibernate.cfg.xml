@@ -9,19 +9,19 @@
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
-    <mapping resource="fr/adaming/awal/entity/User.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/Client.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/Repairer.hbm.xml"/>
     <mapping resource="fr/adaming/awal/entity/Deviceinsurance.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity/Devicerepair.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity/Deviceinsurancemodel.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/Firm.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/User.hbm.xml"/>
     <mapping resource="fr/adaming/awal/entity/Competence.hbm.xml"/>
     <mapping resource="fr/adaming/awal/entity/Device.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity/Admin.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity/Modelpackage.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity/Reseller.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity/Firm.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/Devicerepair.hbm.xml"/>
     <mapping resource="fr/adaming/awal/entity/Modele.hbm.xml"/>
     <mapping resource="fr/adaming/awal/entity/Address.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity/Repairer.hbm.xml"/>
-    <mapping resource="fr/adaming/awal/entity/Client.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/Deviceinsurancemodel.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/Reseller.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/Admin.hbm.xml"/>
+    <mapping resource="fr/adaming/awal/entity/Modelpackage.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -1,18 +1,17 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Reseller" table="reseller" catalog="awal_db">
-        <id name="idSeller" type="java.lang.Integer">
-            <column name="id_seller" />
-            <generator class="identity"></generator>
-        </id>
-        <many-to-one name="firm" class="fr.adaming.awal.entity.Firm" fetch="select">
-            <column name="id_firm" />
-        </many-to-one>
-        <many-to-one name="user" class="fr.adaming.awal.entity.User" cascade="all" fetch="select">
-            <column name="id_user" not-null="true" />
-        </many-to-one>
-    </class>
+  <class catalog="awal_db" name="fr.adaming.awal.entity.Reseller" optimistic-lock="version" table="reseller">
+    <id name="idSeller" type="java.lang.Integer">
+      <column name="id_seller"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="fr.adaming.awal.entity.Firm" fetch="select" name="firm">
+      <column name="id_firm"/>
+    </many-to-one>
+    <many-to-one class="fr.adaming.awal.entity.User" fetch="select" name="user" cascade="all" lazy="false">
+      <column name="id_user" not-null="true" unique="true"/>
+    </many-to-one>
+  </class>
 </hibernate-mapping>

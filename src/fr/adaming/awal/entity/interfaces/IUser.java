@@ -5,10 +5,12 @@
  */
 package fr.adaming.awal.entity.interfaces;
 
+import fr.adaming.awal.entity.User;
+
 /**
  *
  * @author INTI0221
  */
 public interface IUser<T> extends IEntity<T> {
-
+   public User getUser();
 }

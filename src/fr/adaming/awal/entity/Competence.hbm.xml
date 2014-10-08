@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2014 14:45:55 by Hibernate Tools 4.3.1 -->
+<!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class catalog="awal_db" name="fr.adaming.awal.entity.Competence" optimistic-lock="version" table="competence">
-        <id name="idCompetence" type="java.lang.Integer">
-            <column name="id_competence"/>
-            <generator class="identity"/>
-        </id>
-        <many-to-one class="fr.adaming.awal.entity.Repairer" fetch="select" name="repairer">
-            <column name="id_repairer" not-null="true"/>
-        </many-to-one>
-        <property name="type" type="string">
-            <column length="45" name="type" not-null="true"/>
-        </property>
-    </class>
+  <class catalog="awal_db" name="fr.adaming.awal.entity.Competence" optimistic-lock="version" table="competence">
+    <id name="idCompetence" type="java.lang.Integer">
+      <column name="id_competence"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="fr.adaming.awal.entity.Repairer" fetch="select" name="repairer">
+      <column name="id_repairer" not-null="true"/>
+    </many-to-one>
+    <property name="type" type="string">
+      <column length="45" name="type" not-null="true"/>
+    </property>
+  </class>
 </hibernate-mapping>
