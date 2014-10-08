@@ -4,6 +4,7 @@ package fr.adaming.awal.entity;
 
 import fr.adaming.awal.entity.interfaces.IUser;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -73,7 +74,26 @@ public class Client  implements IUser<Integer> {
         return idClient;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Client other = (Client) obj;
+        if (!Objects.equals(this.idClient, other.idClient)) {
+            return false;
+        }
+        return true;
+    }
 
 
 }

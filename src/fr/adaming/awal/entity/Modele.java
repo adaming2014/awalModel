@@ -4,6 +4,7 @@ package fr.adaming.awal.entity;
 
 import fr.adaming.awal.entity.interfaces.IEntity;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -111,6 +112,27 @@ public class Modele  implements IEntity<Integer> {
     @Override
     public Integer getId() {
         return idModele;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Modele other = (Modele) obj;
+        if (!Objects.equals(this.idModele, other.idModele)) {
+            return false;
+        }
+        return true;
     }
 
 

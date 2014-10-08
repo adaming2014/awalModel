@@ -4,6 +4,7 @@ package fr.adaming.awal.entity;
 
 import fr.adaming.awal.entity.interfaces.IUser;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -90,6 +91,27 @@ public class Repairer  implements IUser<Integer> {
     @Override
     public Integer getId() {
         return idRepairer;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Repairer other = (Repairer) obj;
+        if (!Objects.equals(this.idRepairer, other.idRepairer)) {
+            return false;
+        }
+        return true;
     }
 
 

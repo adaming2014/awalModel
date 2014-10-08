@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class catalog="awal_db" name="fr.adaming.awal.entity.Modelpackage" optimistic-lock="version" table="modelpackage">
+  <class catalog="awal_db" name="fr.adaming.awal.entity.Modelpackage" optimistic-lock="version" table="modelpackage" lazy="false">
     <id name="idModelpackage" type="java.lang.Integer">
       <column name="id_modelpackage"/>
       <generator class="identity"/>
