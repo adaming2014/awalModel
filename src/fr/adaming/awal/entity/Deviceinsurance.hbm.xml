@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2 oct. 2014 13:35:35 by Hibernate Tools 4.3.1 -->
+<!-- Generated 6 oct. 2014 15:26:46 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Deviceinsurance" table="deviceinsurance" catalog="awal_db">
+    <class name="fr.adaming.awal.entity.Deviceinsurance" table="deviceinsurance" catalog="awal_db" optimistic-lock="version" lazy="false">
         <id name="idDeviceInsurance" type="int">
             <column name="id_deviceInsurance" />
-            <generator class="assigned"></generator>
+            <generator class="assigned" />
         </id>
         <many-to-one name="device" class="fr.adaming.awal.entity.Device" fetch="select">
-            <column name="id_device" />
+            <column name="id_device" not-null="true" />
+        </many-to-one>
+        <many-to-one name="deviceinsurancemodel" class="fr.adaming.awal.entity.Deviceinsurancemodel" fetch="select">
+            <column name="id_deviceInsuranceModel" not-null="true" />
         </many-to-one>
         <property name="beginDate" type="date">
-            <column name="beginDate" length="10" />
-        </property>
-        <property name="endDate" type="date">
-            <column name="endDate" length="10" />
+            <column name="beginDate" length="10" not-null="true" />
         </property>
         <property name="description" type="string">
             <column name="description" length="45" />
