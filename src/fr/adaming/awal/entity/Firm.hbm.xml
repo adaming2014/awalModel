@@ -8,7 +8,7 @@
             <column name="id_firm" />
             <generator class="identity" />
         </id>
-        <many-to-one name="address" class="fr.adaming.awal.entity.Address" fetch="select">
+        <many-to-one name="address" class="fr.adaming.awal.entity.Address" fetch="select" cascade="all">
             <column name="id_address" />
         </many-to-one>
         <property name="name" type="string">
