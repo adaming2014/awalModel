@@ -1,41 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class catalog="awal_db" name="fr.adaming.awal.entity.Devicerepair" optimistic-lock="version" table="devicerepair" lazy="false">
-    <id name="idDeviceRepair" type="java.lang.Integer">
-      <column name="id_deviceRepair"/>
-      <generator class="identity"/>
-    </id>
-    <many-to-one class="fr.adaming.awal.entity.Device" fetch="select" name="device">
-      <column name="id_device" not-null="true"/>
-    </many-to-one>
-    <many-to-one class="fr.adaming.awal.entity.Modelpackage" fetch="select" name="modelpackage">
-      <column name="id_modelpackage" not-null="true"/>
-    </many-to-one>
-    <many-to-one class="fr.adaming.awal.entity.Repairer" fetch="select" name="repairer">
-      <column name="id_repairer"/>
-    </many-to-one>
-    <property name="description" type="string">
-      <column length="45" name="description"/>
-    </property>
-    <property name="price" type="int">
-      <column name="price" not-null="true"/>
-    </property>
-    <property name="state" type="string">
-      <column length="9" name="state"/>
-    </property>
-    <property name="dateCreation" type="date">
-      <column length="10" name="date_creation" not-null="true"/>
-    </property>
-    <property name="dateInRepair" type="date">
-      <column length="10" name="date_in_repair"/>
-    </property>
-    <property name="dateRepair" type="date">
-      <column length="10" name="date_repair"/>
-    </property>
-    <property name="dateClosed" type="date">
-      <column length="10" name="date_closed"/>
-    </property>
-  </class>
+    <class name="fr.adaming.awal.entity.Devicerepair" table="devicerepair" catalog="awal_db" optimistic-lock="version">
+        <id name="idDeviceRepair" type="java.lang.Integer">
+            <column name="id_deviceRepair" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="device" class="fr.adaming.awal.entity.Device" fetch="select">
+            <column name="id_device" not-null="true" />
+        </many-to-one>
+        <many-to-one name="modelpackage" class="fr.adaming.awal.entity.Modelpackage" fetch="select">
+            <column name="id_modelpackage" not-null="true" />
+        </many-to-one>
+        <many-to-one name="repairer" class="fr.adaming.awal.entity.Repairer" fetch="select">
+            <column name="id_repairer" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="description" length="45" />
+        </property>
+        <property name="price" type="int">
+            <column name="price" not-null="true" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="9" />
+        </property>
+        <property name="dateCreation" type="date">
+            <column name="date_creation" length="10" not-null="true" />
+        </property>
+        <property name="dateInRepair" type="date">
+            <column name="date_in_repair" length="10" />
+        </property>
+        <property name="dateRepair" type="date">
+            <column name="date_repair" length="10" />
+        </property>
+        <property name="dateClosed" type="date">
+            <column name="date_closed" length="10" />
+        </property>
+    </class>
 </hibernate-mapping>

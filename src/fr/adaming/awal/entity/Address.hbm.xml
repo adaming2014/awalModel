@@ -1,38 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class catalog="awal_db" name="fr.adaming.awal.entity.Address" optimistic-lock="version" table="address" lazy="false">
-    <id name="idAddress" type="java.lang.Integer">
-      <column name="id_address"/>
-      <generator class="identity"/>
-    </id>
-    <property name="city" type="string">
-      <column length="45" name="city"/>
-    </property>
-    <property name="street" type="string">
-      <column length="45" name="street"/>
-    </property>
-    <property name="postcode" type="string">
-      <column length="45" name="postcode"/>
-    </property>
-    <set fetch="select" inverse="true" lazy="true" name="clients" table="client">
-      <key>
-        <column name="id_address"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Client"/>
-    </set>
-    <set fetch="select" inverse="true" lazy="true" name="repairers" table="repairer">
-      <key>
-        <column name="id_address"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Repairer"/>
-    </set>
-    <set fetch="select" inverse="true" lazy="true" name="firms" table="firm">
-      <key>
-        <column name="id_address"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Firm"/>
-    </set>
-  </class>
+    <class name="fr.adaming.awal.entity.Address" table="address" catalog="awal_db" optimistic-lock="version">
+        <id name="idAddress" type="java.lang.Integer">
+            <column name="id_address" />
+            <generator class="identity" />
+        </id>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="45" />
+        </property>
+        <property name="postcode" type="string">
+            <column name="postcode" length="45" />
+        </property>
+        <set name="clients" table="client" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_address" not-null="true" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Client" />
+        </set>
+        <set name="firms" table="firm" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_address" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Firm" />
+        </set>
+    </class>
 </hibernate-mapping>

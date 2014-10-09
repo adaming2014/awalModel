@@ -1,50 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class catalog="awal_db" name="fr.adaming.awal.entity.User" optimistic-lock="version" table="user" lazy="false">
-    <id name="idUser" type="java.lang.Integer">
-      <column name="id_user"/>
-      <generator class="identity"/>
-    </id>
-    <property name="firstname" type="string">
-      <column length="45" name="firstname" not-null="true"/>
-    </property>
-    <property name="lastname" type="string">
-      <column length="45" name="lastname" not-null="true"/>
-    </property>
-    <property name="mail" type="string">
-      <column length="45" name="mail" not-null="true" unique="true"/>
-    </property>
-    <property name="password" type="string">
-      <column length="45" name="password" not-null="true"/>
-    </property>
-    <property name="phone" type="string">
-      <column length="45" name="phone"/>
-    </property>
-    <set fetch="select" inverse="true" lazy="true" name="resellers" table="reseller">
-      <key>
-        <column name="id_user" not-null="true" unique="true"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Reseller"/>
-    </set>
-    <set fetch="select" inverse="true" lazy="true" name="clients" table="client">
-      <key>
-        <column name="id_user" not-null="true" unique="true"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Client"/>
-    </set>
-    <set fetch="select" inverse="true" lazy="true" name="admins" table="admin">
-      <key>
-        <column name="id_user" not-null="true" unique="true"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Admin"/>
-    </set>
-    <set fetch="select" inverse="true" lazy="true" name="repairers" table="repairer">
-      <key>
-        <column name="id_user" not-null="true" unique="true"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Repairer"/>
-    </set>
-  </class>
+    <class name="fr.adaming.awal.entity.User" table="user" catalog="awal_db" optimistic-lock="version">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="id_user" />
+            <generator class="identity" />
+        </id>
+        <property name="firstname" type="string">
+            <column name="firstname" length="45" not-null="true" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="45" not-null="true" />
+        </property>
+        <property name="mail" type="string">
+            <column name="mail" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="45" />
+        </property>
+        <set name="resellers" table="reseller" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_user" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Reseller" />
+        </set>
+        <set name="clients" table="client" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_user" not-null="true" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Client" />
+        </set>
+        <set name="admins" table="admin" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_user" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Admin" />
+        </set>
+        <set name="repairers" table="repairer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_user" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Repairer" />
+        </set>
+    </class>
 </hibernate-mapping>

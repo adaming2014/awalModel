@@ -1,26 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class catalog="awal_db" name="fr.adaming.awal.entity.Deviceinsurance" optimistic-lock="version" table="deviceinsurance" lazy="false">
-    <id name="idDeviceInsurance" type="java.lang.Integer">
-      <column name="id_deviceInsurance"/>
-      <generator class="identity"/>
-    </id>
-    <many-to-one class="fr.adaming.awal.entity.Device" fetch="select" name="device">
-      <column name="id_device" not-null="true"/>
-    </many-to-one>
-    <many-to-one class="fr.adaming.awal.entity.Deviceinsurancemodel" fetch="select" name="deviceinsurancemodel">
-      <column name="id_deviceInsuranceModel" not-null="true"/>
-    </many-to-one>
-    <property name="beginDate" type="date">
-      <column length="10" name="beginDate" not-null="true"/>
-    </property>
-    <property name="description" type="string">
-      <column length="45" name="description"/>
-    </property>
-    <property name="endDate" type="date">
-      <column length="10" name="endDate"/>
-    </property>
-  </class>
+    <class name="fr.adaming.awal.entity.Deviceinsurance" table="deviceinsurance" catalog="awal_db" optimistic-lock="version">
+        <id name="idDeviceInsurance" type="java.lang.Integer">
+            <column name="id_deviceInsurance" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="device" class="fr.adaming.awal.entity.Device" fetch="select">
+            <column name="id_device" not-null="true" />
+        </many-to-one>
+        <many-to-one name="deviceinsurancemodel" class="fr.adaming.awal.entity.Deviceinsurancemodel" fetch="select">
+            <column name="id_deviceInsuranceModel" not-null="true" />
+        </many-to-one>
+        <property name="beginDate" type="date">
+            <column name="beginDate" length="10" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="45" />
+        </property>
+        <property name="endDate" type="date">
+            <column name="endDate" length="10" />
+        </property>
+    </class>
 </hibernate-mapping>

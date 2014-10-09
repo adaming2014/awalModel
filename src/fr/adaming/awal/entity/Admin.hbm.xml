@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class catalog="awal_db" name="fr.adaming.awal.entity.Admin" optimistic-lock="version" table="admin">
-    <id name="idAdmin" type="java.lang.Integer">
-      <column name="id_admin"/>
-      <generator class="identity"/>
-    </id>
-    <many-to-one class="fr.adaming.awal.entity.User" fetch="select" name="user" cascade="all" lazy="false">
-      <column name="id_user" not-null="true" unique="true"/>
-    </many-to-one>
-  </class>
+    <class name="fr.adaming.awal.entity.Admin" table="admin" catalog="awal_db" optimistic-lock="version">
+        <id name="idAdmin" type="java.lang.Integer">
+            <column name="id_admin" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="fr.adaming.awal.entity.User" fetch="select" cascade="all">
+            <column name="id_user" not-null="true" unique="true" />
+        </many-to-one>
+    </class>
 </hibernate-mapping>

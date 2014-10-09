@@ -1,32 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 8 oct. 2014 14:22:14 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class catalog="awal_db" name="fr.adaming.awal.entity.Device" optimistic-lock="version" table="device" lazy="false">
-    <id name="idDevice" type="java.lang.Integer">
-      <column name="id_device"/>
-      <generator class="identity"/>
-    </id>
-    <many-to-one class="fr.adaming.awal.entity.Client" fetch="select" name="client">
-      <column name="id_client" not-null="true"/>
-    </many-to-one>
-    <many-to-one class="fr.adaming.awal.entity.Modele" fetch="select" name="modele">
-      <column name="id_modele" not-null="true"/>
-    </many-to-one>
-    <property name="description" type="string">
-      <column length="45" name="description"/>
-    </property>
-    <set fetch="select" inverse="true" lazy="true" name="deviceinsurances" table="deviceinsurance">
-      <key>
-        <column name="id_device" not-null="true"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Deviceinsurance"/>
-    </set>
-    <set fetch="select" inverse="true" lazy="true" name="devicerepairs" table="devicerepair">
-      <key>
-        <column name="id_device" not-null="true"/>
-      </key>
-      <one-to-many class="fr.adaming.awal.entity.Devicerepair"/>
-    </set>
-  </class>
+    <class name="fr.adaming.awal.entity.Device" table="device" catalog="awal_db" optimistic-lock="version">
+        <id name="idDevice" type="java.lang.Integer">
+            <column name="id_device" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="client" class="fr.adaming.awal.entity.Client" fetch="select">
+            <column name="id_client" not-null="true" />
+        </many-to-one>
+        <many-to-one name="modele" class="fr.adaming.awal.entity.Modele" fetch="select">
+            <column name="id_modele" not-null="true" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="description" length="45" />
+        </property>
+        <set name="deviceinsurances" table="deviceinsurance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_device" not-null="true" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Deviceinsurance" />
+        </set>
+        <set name="devicerepairs" table="devicerepair" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_device" not-null="true" />
+            </key>
+            <one-to-many class="fr.adaming.awal.entity.Devicerepair" />
+        </set>
+    </class>
 </hibernate-mapping>

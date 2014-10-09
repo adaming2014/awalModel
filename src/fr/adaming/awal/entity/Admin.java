@@ -1,5 +1,5 @@
 package fr.adaming.awal.entity;
-// Generated 8 oct. 2014 14:22:13 by Hibernate Tools 4.3.1
+// Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1
 
 import fr.adaming.awal.entity.interfaces.IUser;
 

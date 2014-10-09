@@ -1,6 +1,6 @@
 package fr.adaming.awal.entity;
+// Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1
 
-// Generated 8 oct. 2014 14:22:13 by Hibernate Tools 4.3.1
 import fr.adaming.awal.entity.interfaces.IEntity;
 import java.util.Date;
 
@@ -84,27 +84,6 @@ public class Deviceinsurance implements IEntity<Integer> {
     @Override
     public Integer getId() {
         return idDeviceInsurance;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Deviceinsurance other = (Deviceinsurance) obj;
-        if (this.idDeviceInsurance != other.idDeviceInsurance) {
-            return false;
-        }
-        return true;
     }
 
 }
