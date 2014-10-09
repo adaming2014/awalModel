@@ -97,4 +97,9 @@ public class Modelpackage implements IEntity<Integer> {
         return idModelpackage;
     }
 
+    @Override
+    public void setId(Integer id) {
+        this.idModelpackage = id;
+    }
+
 }

@@ -49,6 +49,7 @@ public class Client implements IUser<Integer> {
         this.address = address;
     }
 
+    @Override
     public Firm getFirm() {
         return this.firm;
     }
@@ -57,6 +58,7 @@ public class Client implements IUser<Integer> {
         this.firm = firm;
     }
 
+    @Override
     public User getUser() {
         return this.user;
     }
@@ -84,6 +86,11 @@ public class Client implements IUser<Integer> {
     @Override
     public Integer getId() {
         return idClient;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.idClient = id;
     }
 
 }

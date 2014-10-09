@@ -26,6 +26,7 @@ public class Admin implements IUser<Integer> {
         this.idAdmin = idAdmin;
     }
 
+    @Override
     public User getUser() {
         return this.user;
     }
@@ -37,6 +38,17 @@ public class Admin implements IUser<Integer> {
     @Override
     public Integer getId() {
         return idAdmin;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.idAdmin = id;
+    }
+
+    @Override
+    public Firm getFirm() {
+        // Admin doesn't have firm
+        return null;
     }
 
 }

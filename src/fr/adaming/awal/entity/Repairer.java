@@ -41,6 +41,7 @@ public class Repairer implements IUser<Integer> {
         this.idRepairer = idRepairer;
     }
 
+    @Override
     public Firm getFirm() {
         return this.firm;
     }
@@ -49,6 +50,7 @@ public class Repairer implements IUser<Integer> {
         this.firm = firm;
     }
 
+    @Override
     public User getUser() {
         return this.user;
     }
@@ -84,6 +86,11 @@ public class Repairer implements IUser<Integer> {
     @Override
     public Integer getId() {
         return idRepairer;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.idRepairer = id;
     }
 
 }

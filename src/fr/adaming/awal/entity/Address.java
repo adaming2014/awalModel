@@ -81,4 +81,9 @@ public class Address implements IEntity<Integer> {
         return idAddress;
     }
 
+    @Override
+    public void setId(Integer id) {
+        this.idAddress = id;
+    }
+
 }

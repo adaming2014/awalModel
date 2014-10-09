@@ -10,8 +10,11 @@ import java.io.Serializable;
 /**
  *
  * @author INTI0221
- * @param <T>   Id type
+ * @param <T> Id type
  */
 public interface IEntity<T> extends Serializable {
+
     T getId();
+
+    void setId(T id);
 }

@@ -137,4 +137,9 @@ public class Devicerepair implements IEntity<Integer> {
         return idDeviceRepair;
     }
 
+    @Override
+    public void setId(Integer id) {
+        this.idDeviceRepair = id;
+    }
+
 }

@@ -49,4 +49,9 @@ public class Competence implements IEntity<Integer> {
         return idCompetence;
     }
 
+    @Override
+    public void setId(Integer id) {
+        this.idCompetence = id;
+    }
+
 }

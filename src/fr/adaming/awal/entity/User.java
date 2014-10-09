@@ -125,7 +125,12 @@ public class User implements IEntity<Integer> {
 
     @Override
     public Integer getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return idUser;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.idUser = id;
     }
 
 }

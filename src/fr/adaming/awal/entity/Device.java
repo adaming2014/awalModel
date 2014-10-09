@@ -86,4 +86,9 @@ public class Device implements IEntity<Integer> {
         return idDevice;
     }
 
+    @Override
+    public void setId(Integer id) {
+        this.idDevice = id;
+    }
+
 }

@@ -32,6 +32,7 @@ public class Reseller implements IUser<Integer> {
         this.idSeller = idSeller;
     }
 
+    @Override
     public Firm getFirm() {
         return this.firm;
     }
@@ -40,6 +41,7 @@ public class Reseller implements IUser<Integer> {
         this.firm = firm;
     }
 
+    @Override
     public User getUser() {
         return this.user;
     }
@@ -51,6 +53,11 @@ public class Reseller implements IUser<Integer> {
     @Override
     public Integer getId() {
         return idSeller;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

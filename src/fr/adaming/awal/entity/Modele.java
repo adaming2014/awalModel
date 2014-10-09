@@ -129,4 +129,9 @@ public class Modele implements IEntity<Integer> {
         return idModele;
     }
 
+    @Override
+    public void setId(Integer id) {
+        this.idModele = id;
+    }
+
 }

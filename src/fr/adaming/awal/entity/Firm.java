@@ -115,4 +115,9 @@ public class Firm implements IEntity<Integer> {
         return idFirm;
     }
 
+    @Override
+    public void setId(Integer id) {
+        this.idFirm = id;
+    }
+
 }

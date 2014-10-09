@@ -98,4 +98,9 @@ public class Deviceinsurancemodel implements IEntity<Integer> {
         return idDeviceinsurancemodel;
     }
 
+    @Override
+    public void setId(Integer id) {
+        this.idDeviceinsurancemodel = id;
+    }
+
 }
