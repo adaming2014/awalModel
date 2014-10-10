@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="fr.adaming.awal.entity.Client" table="client" catalog="awal_db" optimistic-lock="version">
+    <class name="fr.adaming.awal.entity.Client" table="client" catalog="awal_db" optimistic-lock="version" lazy="false">
         <id name="idClient" type="java.lang.Integer">
             <column name="id_client" />
             <generator class="identity" />
