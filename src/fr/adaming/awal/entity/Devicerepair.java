@@ -2,6 +2,7 @@ package fr.adaming.awal.entity;
 // Generated 9 oct. 2014 14:54:37 by Hibernate Tools 4.3.1
 
 import fr.adaming.awal.entity.interfaces.IEntity;
+import fr.adaming.awal.util.DeviceRepairerUtil;
 import java.util.Date;
 
 /**
@@ -42,6 +43,22 @@ public class Devicerepair implements IEntity<Integer> {
         this.dateInRepair = dateInRepair;
         this.dateRepair = dateRepair;
         this.dateClosed = dateClosed;
+    }
+
+    public boolean isInCreateState() {
+        return state.equals(DeviceRepairerUtil.STATE_CREATE);
+    }
+
+    public boolean isInRepairingState() {
+        return state.equals(DeviceRepairerUtil.STATE_REPAIRING);
+    }
+
+    public boolean isInRepairedState() {
+        return state.equals(DeviceRepairerUtil.STATE_REPAIRED);
+    }
+
+    public boolean isInClosedState() {
+        return state.equals(DeviceRepairerUtil.STATE_CLOSED);
     }
 
     public Integer getIdDeviceRepair() {

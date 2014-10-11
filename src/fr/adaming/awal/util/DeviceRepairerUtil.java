@@ -12,7 +12,7 @@ package fr.adaming.awal.util;
 public class DeviceRepairerUtil {
 
     public static final String STATE_CREATE = "CREATE";
-    public static final String STATE_IN_REPAIR = "IN_REPAIR";
-    public static final String STATE_REPAIR = "REPAIR";
+    public static final String STATE_REPAIRING = "IN_REPAIR";
+    public static final String STATE_REPAIRED = "REPAIR";
     public static final String STATE_CLOSED = "CLOSED";
 }
