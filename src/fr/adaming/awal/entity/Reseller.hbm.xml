@@ -11,7 +11,7 @@
         <many-to-one name="firm" class="fr.adaming.awal.entity.Firm" fetch="select">
             <column name="id_firm" />
         </many-to-one>
-        <many-to-one name="user" class="fr.adaming.awal.entity.User" fetch="select" cascade="persist">
+        <many-to-one name="user" class="fr.adaming.awal.entity.User" fetch="select" cascade="save-update">
             <column name="id_user" not-null="true" unique="true" />
         </many-to-one>
     </class>
