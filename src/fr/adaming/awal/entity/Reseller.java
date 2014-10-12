@@ -57,7 +57,7 @@ public class Reseller implements IUser<Integer> {
 
     @Override
     public void setId(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.idSeller = id;
     }
 
 }
